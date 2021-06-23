@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:footballapp/Screens/HomeScreen.dart';
+import 'package:footballapp/ui/Screens/HomeScreen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());

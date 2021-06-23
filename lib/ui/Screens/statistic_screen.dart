@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:footballapp/Screens/TableScreen.dart';
-import 'package:footballapp/Widgets/LeagueContainer.dart';
+import 'package:footballapp/ui/Screens/TableScreen.dart';
+import 'package:footballapp/ui/Widgets/LeagueContainer.dart';
+import 'package:shimmer/shimmer.dart';
 
-class HomeScreen extends StatefulWidget {
+class StatisticScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _StatisticScreenState createState() => _StatisticScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _StatisticScreenState extends State<StatisticScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
+
         child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            colors: [
-              const Color(0xffe84860),
-              const Color(0xffe70066),
-            ],
-            begin: const FractionalOffset(0.0, 0.0),
-            end: const FractionalOffset(0.0, 1.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp,
-          )),
+          decoration: BoxDecoration(color: Colors.grey[850]),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ListView(
@@ -36,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
                 SizedBox(
@@ -49,12 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisSpacing: 15,
                   children: [
                     GestureDetector(
-                      child: LeagueContainer(image: 'assets/pl.png'),
+                      child: LeagueContainer(image: 'assets/pl.png') ,
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TableScreen(code: 'PL'),
+                              builder: (context) => TableScreen(code: 'PL') ?? '',
                             ));
                       },
                     ),
@@ -64,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TableScreen(code: 'PD'),
+                              builder: (context) => TableScreen(code: 'PD') ?? '',
                             ));
                       },
                     ),
@@ -74,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TableScreen(code: 'BL1'),
+                              builder: (context) => TableScreen(code: 'BL1')?? '',
                             ));
                       },
                     ),
@@ -84,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TableScreen(code: 'SA'),
+                              builder: (context) => TableScreen(code: 'SA') ?? '',
                             ));
                       },
                     ),
@@ -104,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TableScreen(code: 'PPL'),
+                              builder: (context) => TableScreen(code: 'PPL')?? null,
                             ));
                       },
                     ),

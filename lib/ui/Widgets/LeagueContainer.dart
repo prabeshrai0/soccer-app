@@ -9,8 +9,8 @@ class LeagueContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
+        color: Colors.grey[600],
+        borderRadius: BorderRadius.circular(25),
       ),
       child: Image.asset(image),
     );
