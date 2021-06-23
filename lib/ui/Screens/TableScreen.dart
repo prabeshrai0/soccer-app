@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:footballapp/ui/Screens/club_info.dart';
 import 'package:http/http.dart' as http;
-import 'package:shimmer/shimmer.dart';
+
 
 class TableScreen extends StatefulWidget {
   final String code;
@@ -21,7 +21,7 @@ class _TableScreenState extends State<TableScreen> {
   getTable() async {
     http.Response response = await http.get(
         'http://api.football-data.org/v2/competitions/${widget.code}/standings',
-        headers: {'X-Auth-Token': '86014f6025ae430dba078acc94bb2647'});
+        headers: {'X-Auth-Token': 'c6cc38d8b7fc46919dd93ad173bbc48a'});
     String body = response.body;
     Map data = jsonDecode(body);
     // print(data);
